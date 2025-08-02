@@ -4,6 +4,7 @@
   "description": "easy localhost to public",
   "scripts": {
     "watch": "pnpm --filter './apps/**' run watch",
+    "watch:api": "pnpm --filter './apps/api' run watch",
     "build": "pnpm --filter './**' run build",
     "build:packages": "pnpm --filter './packages/**' run build",
     "start": "pnpm --filter './apps/**' run start"

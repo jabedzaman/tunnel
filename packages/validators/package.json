@@ -1,0 +1,35 @@
+{
+  "name": "@tunnel/validators",
+  "version": "0.0.1",
+  "description": "validators for tunnel",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jabedzaman/tunnel.git",
+    "directory": "packages/validators"
+  },
+  "author": "jabedzaman <hi@jabed.dev> (https://jabed.dev/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jabedzaman/tunnel/issues"
+  },
+  "homepage": "https://github.com/jabedzaman/tunnel#readme",
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "dotenv": "^16.5.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@tunnel/interfaces": "workspace:*",
+    "zod": "^4.0.5"
+  }
+}

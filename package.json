@@ -1,0 +1,29 @@
+{
+  "name": "tunnel",
+  "version": "0.0.1",
+  "description": "easy localhost to public",
+  "scripts": {
+    "watch": "pnpm --filter './apps/**' run watch",
+    "build": "pnpm --filter './**' run build",
+    "build:packages": "pnpm --filter './packages/**' run build",
+    "start": "pnpm --filter './apps/**' run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jabedzaman/tunnel.git"
+  },
+  "keywords": [
+    "tunnel",
+    "localhost",
+    "public",
+    "development",
+    "proxy"
+  ],
+  "author": "jabedzaman <hi@jabed.dev> (https://jabed.dev)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jabedzaman/tunnel/issues"
+  },
+  "homepage": "https://github.com/jabedzaman/tunnel#readme",
+  "packageManager": "pnpm@9.14.2"
+}

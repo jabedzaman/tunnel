@@ -1,0 +1,39 @@
+{
+    "name": "@tunnel/cli",
+    "version": "0.0.1",
+    "description": "CLI for Tunnel",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jabedzaman/tunnel.git",
+        "directory": "packages/cli"
+    },
+    "author": "jabedzaman <hi@jabed.dev> (https://jabed.dev/)",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/jabedzaman/tunnel/issues"
+    },
+    "homepage": "https://github.com/jabedzaman/tunnel#readme",
+    "main": "dist/cli.mjs",
+    "types": "dist/cli.d.mts",
+    "files": [
+        "dist"
+    ],
+    "bin": {
+        "tunnel": "dist/cli.mjs"
+    },
+    "scripts": {
+        "build": "tsup",
+        "link": "npm run build && npm link"
+    },
+    "keywords": [],
+    "devDependencies": {
+        "@types/node": "^22.15.29",
+        "dotenv": "^17.2.1",
+        "tsup": "^8.5.0",
+        "typescript": "^5.8.3"
+    },
+    "dependencies": {
+        "chalk": "^5.4.1",
+        "commander": "^14.0.0"
+    }
+}

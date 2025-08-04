@@ -1,6 +1,7 @@
 import { SearchParams } from "nuqs/server";
 import { searchParamsCache } from "./search-params";
 import { notFound } from "next/navigation";
+import { Apporve } from "./_components/approve";
 
 export default async function Page({
   searchParams,
@@ -15,10 +16,7 @@ export default async function Page({
   }
   return (
     <div>
-      <h1>
-        Authorize
-        {apiKey ? ` - ${apiKey}` : ""}
-      </h1>
+      <Apporve apiKeyId={apiKey} />
     </div>
   );
 }

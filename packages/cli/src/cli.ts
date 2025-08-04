@@ -1,15 +1,25 @@
 #!/usr/bin/env node
 import { Command } from "commander";
 
-const program = new Command();
+import packageJson from "../package.json";
+import { auth } from "./commands";
 
-program.name("tunnel").description("Easy localhost to public").version("1.0.0");
+process.on("SIGINT", () => process.exit(0));
+process.on("SIGTERM", () => process.exit(0));
 
-program
-  .command("start")
-  .description("Start tunnel")
-  .action(() => {
-    console.log("Start tunnel");
-  });
+async function main() {
+  const program = new Command()
+    .name("tunnel")
+    .description("easy localhost to public")
+    .version(
+      packageJson.version || "1.0.0",
+      "-v, --version",
+      "display the version number"
+    );
 
-program.parse();
+  program.addCommand(auth);
+
+  program.parse();
+}
+
+main();

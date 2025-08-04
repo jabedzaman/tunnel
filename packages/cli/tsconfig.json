@@ -4,6 +4,7 @@
     "module": "NodeNext",
     "baseUrl": "./",
     "paths": { "~/*": ["./src/*"] },
+    "resolveJsonModule": true,
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

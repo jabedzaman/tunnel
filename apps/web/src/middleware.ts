@@ -7,7 +7,7 @@ export async function middleware(request: NextRequest) {
   const refreshToken = request.cookies.get("refreshToken") || "";
 
   // Check if the path is in the auth routes
-  const inAuth = path.startsWith("/auth");
+  const inAuth = path === "/sign-in" || path === "/sign-up";
   const inProtected = path.startsWith("/app");
 
   if (inAuth && refreshToken) {

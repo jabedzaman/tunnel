@@ -39,6 +39,7 @@ const userSchema = new mongoose.Schema<IUserDocument>(
 
     // references
     accounts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Account" }],
+    apiKeys: [{ type: mongoose.Schema.Types.ObjectId, ref: "ApiKey" }],
 
     // timestamps
     deletedAt: { type: Date, required: false },

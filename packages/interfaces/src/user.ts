@@ -1,4 +1,5 @@
 import { IAccount } from "./account";
+import { IApiKey } from "./api-key";
 import { IRole } from "./role";
 
 export interface IUser {
@@ -19,6 +20,7 @@ export interface IUser {
 
   // references
   accounts: Array<string | IAccount>;
+  apiKeys: Array<string | IApiKey>;
 
   // timestamps
   createdAt: number;

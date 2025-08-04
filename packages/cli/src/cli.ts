@@ -2,7 +2,7 @@
 import { Command } from "commander";
 
 import packageJson from "../package.json";
-import { auth } from "./commands";
+import { auth, tunnelCommands } from "./commands";
 
 process.on("SIGINT", () => process.exit(0));
 process.on("SIGTERM", () => process.exit(0));
@@ -17,7 +17,7 @@ async function main() {
       "display the version number"
     );
 
-  program.addCommand(auth);
+  program.addCommand(auth).addCommand(tunnelCommands);
 
   program.parse();
 }

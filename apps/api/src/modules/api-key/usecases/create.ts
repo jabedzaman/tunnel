@@ -1,4 +1,4 @@
-import { ApiKey } from "~/models/api-key.model";
+import { ApiKey } from "~/models";
 import moment from "moment";
 
 /**

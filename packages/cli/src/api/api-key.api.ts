@@ -1,3 +1,4 @@
+import { GetApiKeyParams } from "@tunnel/validators";
 import { http } from "~/libs";
 
 export const apiKey = {
@@ -14,11 +15,11 @@ export const apiKey = {
     }
   },
 
-  get: async (params: { apiKey: string }) => {
+  get: async (params: GetApiKeyParams) => {
     try {
       const { data } = await http.get<{
         status: "pending" | "active" | "expired" | "revoked";
-      }>(`/api-key/${params.apiKey}`);
+      }>(`/api-key/${params.apiKeyId}`);
       return data;
     } catch (error) {
       throw new Error("Failed to retrieve API key");

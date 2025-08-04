@@ -1,6 +1,7 @@
 import { IAccount } from "./account";
 import { IApiKey } from "./api-key";
 import { IRole } from "./role";
+import { ITunnel } from "./tunnel";
 
 export interface IUser {
   _id: string;
@@ -21,6 +22,7 @@ export interface IUser {
   // references
   accounts: Array<string | IAccount>;
   apiKeys: Array<string | IApiKey>;
+  tunnels: Array<string | ITunnel>;
 
   // timestamps
   createdAt: number;

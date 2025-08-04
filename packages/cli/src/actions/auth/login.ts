@@ -73,7 +73,7 @@ const poll = async (apiKey: string, spinner: Ora) => {
     const pollInterval = setInterval(async () => {
       attempts++; // Increment the attempt count
       try {
-        const { status } = await api.apiKey.get({ apiKey });
+        const { status } = await api.apiKey.get({ apiKeyId: apiKey });
         if (status === "active") {
           clearInterval(pollInterval);
           resolve({ success: true });

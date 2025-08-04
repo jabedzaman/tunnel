@@ -1,5 +1,5 @@
 import { GetApiKeyParams } from "@tunnel/validators";
-import { ApiKey } from "~/models/api-key.model";
+import { ApiKey } from "~/models";
 import { ApiError, httpStatus } from "~/utils";
 
 export const get = async (params: GetApiKeyParams) => {

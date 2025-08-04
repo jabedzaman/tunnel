@@ -27,17 +27,23 @@
     },
     "keywords": [],
     "devDependencies": {
+        "@types/http-proxy": "^1.17.16",
         "@types/node": "^22.15.29",
+        "@types/ws": "^8.18.1",
         "dotenv": "^17.2.1",
         "tsup": "^8.5.0",
         "typescript": "^5.8.3"
     },
     "dependencies": {
+        "@tunnel/interfaces": "workspace:*",
+        "@tunnel/validators": "workspace:*",
         "axios": "^1.10.0",
         "chalk": "^5.4.1",
         "commander": "^14.0.0",
+        "http-proxy": "^1.18.1",
         "inquirer": "^12.9.0",
         "open": "^10.2.0",
-        "ora": "^8.2.0"
+        "ora": "^8.2.0",
+        "ws": "^8.18.3"
     }
 }

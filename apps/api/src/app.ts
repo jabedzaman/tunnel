@@ -5,6 +5,7 @@ import http from "node:http";
 import cookieParser from "cookie-parser";
 import { errorHandler, loggerMiddleware, notFoundHandler } from "~/middlewares";
 import { router } from "./routes";
+import { WebSocketServer } from "ws";
 
 /**
  * @description express app
@@ -45,5 +46,6 @@ app.use(errorHandler);
  */
 export const createHttpServer = () => {
   const server = http.createServer(app);
-  return server;
+  const wss = new WebSocketServer({ server });
+  return { server, wss };
 };

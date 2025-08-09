@@ -3,14 +3,19 @@ import mongoose from "mongoose";
 import { config } from "~/config";
 import { createHttpServer } from "./app";
 import { logger } from "./utils";
+import { WebSocketServer } from "ws";
+import { ProxyManager } from "./proxy";
 
 const { HTTP_PORT, HTTP_HOST } = config;
+
+const proxyManager = new ProxyManager();
 
 /**
  * @description server instance
  * This variable holds the instance of the HTTP server.
  */
 let server: http.Server | null = null;
+let wss: WebSocketServer | null = null;
 
 /**
  * @description
@@ -35,7 +40,14 @@ const connectToDatabase = async (): Promise<void> => {
  */
 const main = async (): Promise<void> => {
   await connectToDatabase();
-  server = createHttpServer();
+  const result = createHttpServer();
+  server = result.server;
+  wss = result.wss;
+
+  // WebSocket handling for tunnels
+  wss.on("connection", (ws, req) => {
+    proxyManager.handleTunnelConnection(ws, req);
+  });
 
   server.listen(HTTP_PORT, () => {
     logger.info(`server is running at http://${HTTP_HOST}:${HTTP_PORT}`);
